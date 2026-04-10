@@ -6,7 +6,7 @@ var lengthOfLastWord = function (s) {
   return s[s.length - 1].length;
 };
 
-// 2nd Approach - Using loop
+// 2nd Approach - Using 2 loop
 
 var lengthOfLastWord = function (s) {
   let n = s.length - 1;
@@ -26,6 +26,22 @@ var lengthOfLastWord = function (s) {
     } else {
       break;
     }
+  }
+  return count;
+};
+
+// 3rd Approach - Using 1 loop
+var lengthOfLastWord = function (s) {
+  let n = s.length - 1;
+  let count = 0;
+
+  while (n >= 0) {
+    if (s[n] !== " ") {
+      count++;
+    } else if (count > 0) {
+      break;
+    }
+    n--;
   }
   return count;
 };
